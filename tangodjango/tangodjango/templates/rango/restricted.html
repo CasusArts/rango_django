@@ -1,0 +1,14 @@
+{% extends 'rango/base_bootstrap.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+    Restricted Page
+{% endblock %}
+
+{% block body_block %}
+    Welcome, {{ user.username }}! You can see this page, because you're registered user!
+{% endblock %}
+
+{% block footer_block %}
+
+{% endblock %}

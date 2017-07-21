@@ -1,0 +1,58 @@
+{% extends 'rango/base_bootstrap.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+{% endblock %}
+<div>
+
+</div>
+<div>
+    {% block body_block %}
+
+
+        <div class="row marketing">
+            <div class="col-lg-6">
+
+            </div>
+        </div>
+        <div class="jumbotron">
+            <h1 class="display-3">Rango says...</h1>
+            {% if user.is_authenticated %}
+                howdy <strong>{{ user.username|upper }}</strong>!
+            {% else %}
+                hey there, partner!
+            {% endif %}
+        </div>
+        <div class="row marketing">
+            <div class="col-lg-6">
+                {% if categories %}
+                    <h3>Top 5 Categories</h3>
+                    {% for category in categories %}
+                        <ul class="list-group">
+                            <li class="list-group-item"><a href="{% url 'rango:show_category' category.slug %}">{{ category.name }}</a></li>
+                        </ul>
+                    {% endfor %}
+                {% else %}
+                    <div>The category is not specified!</div>
+                {% endif %}
+            </div>
+            <div class="col-lg-6">
+                {% if pages %}
+                <h3>Top 5 Pages</h3>
+                {% for page in pages %}
+                    <ul class="list-group">
+                        <li class="list-group-item"><a href="{{ page.url }}">{{ page.title }}</a><span> - {{ page.views }} views</span></li>
+                    </ul>
+                {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <img src="{% static 'images/rango2.jpg' %}" id="pic-profile" alt="Rango">
+            </div>
+        </div>
+
+    {% endblock %}
+</div>

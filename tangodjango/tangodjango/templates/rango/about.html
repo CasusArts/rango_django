@@ -1,0 +1,23 @@
+{% extends 'rango/base_bootstrap.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+{% endblock %}
+
+{% block body_block%}
+<h1>About Rango</h1>
+
+<div>
+    <strong>{{ aboutstatement }}</strong>
+</div>
+<div>
+    <a href="{% url 'index' %}">Back to Main Page</a>
+</div>
+<div>
+    <p>You visited this page {{ visits }} times!</p>
+</div>
+<div>
+    <img src="{{ MEDIA_URL }}cat.jpg" id="pic-profile" alt="Rango's cat">
+
+</div>
+{% endblock %}

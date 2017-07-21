@@ -1,0 +1,29 @@
+{% extends 'rango/base_bootstrap.html' %}
+{% block body_block %}
+    <h2 class="form-signin-heading">Sign Up Here</h2>
+
+    <form action="." method="post" role="form">
+        {% csrf_token %}
+        <div class="form-group">
+            <p class="required">
+                <label for="id_username" class="required">Username:</label>
+                <input type="text" class="form-control" id="id_username" name="username" maxlength="30">
+                <span class="helptext">Required. 30 characters or fewer. Letters, digits and @/./+/-/_ only.</span>
+            </p>
+            <p class="required">
+                <label for="id_email" class="required">E-Mail:</label>
+                <input type="text" class="form-contro" id="id_email">
+            </p>
+            <p class="required">
+                <label for="id_password1">Password:</label>
+                <input type="password" class="form-control" id="id_password1" name="password1" >
+            </p>
+            <p class="required">
+                <label for="id_password2" class="required">Password confirm:</label>
+                <input type="password" class="form-control" id="id_password2" name="password2">
+                <span>Enter the same password as before, for verification.</span>
+            </p>
+        </div>
+        <button class="btn btn-default" type="submit">Submit</button>
+    </form>
+{% endblock %}
