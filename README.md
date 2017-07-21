@@ -1,6 +1,11 @@
-####Require:
+#RANGO DJANGO APP
+
+This app shows some link directory with simple authentication module.
+
+####Requirements:
 - Python 3.6
 - PostgreSQL
+- Django 1.11
 
 ####Run it:
 
